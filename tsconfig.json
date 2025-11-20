@@ -2,13 +2,19 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
+        "jsx": "react-jsx",
         "moduleResolution": "bundler",
         "types": ["vite/client"],
         "allowJs": true,
         "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/*"]
+        },
         "isolatedModules": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
         "strict": true,
         "noImplicitAny": true
     },
@@ -16,5 +22,6 @@
         "resources/js/**/*.ts",
         "resources/js/**/*.d.ts",
         "resources/js/**/*.tsx"
-    ]
+    ],
+    "exclude": ["node_modules"]
 }
