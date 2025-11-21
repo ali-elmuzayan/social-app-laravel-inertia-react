@@ -1,3 +1,5 @@
+import "../css/app.css"; // ✅ REQUIRED FOR TAILWIND + SHADCN
+
 import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
 

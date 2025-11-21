@@ -15,6 +15,10 @@ Route::get('/content', function () {
     return Inertia::render('Content');
 });
 
-Route::get('dashboard', function() {
-    return "dashboard";
-})->name('dashboard');
+
+// ------------------- should be authenticated to access the dashboard -------------------
+Route::middleware('auth')->group(function() {
+    Route::get('/dashboard', function() {
+        return "dashboard";
+    })->name('dashboard');
+});

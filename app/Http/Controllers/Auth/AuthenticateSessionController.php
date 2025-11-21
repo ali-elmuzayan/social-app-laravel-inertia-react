@@ -14,7 +14,7 @@ class AuthenticateSessionController extends Controller
 {
     public function create() : Response
     {
-        return Inertia::render("auth/login");
+        return Inertia::render("Auth/Login/Create");
     }
 
     public function store(LoginRequest $request) : RedirectResponse
@@ -23,7 +23,7 @@ class AuthenticateSessionController extends Controller
 
         $request->session()->regenerate(); 
 
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended("dashboard");
     }
 
 
