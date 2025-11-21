@@ -1,6 +1,7 @@
 import { PageProps } from "@/types";
 import { Link, usePage } from "@inertiajs/react";
-// import {create as loginPage} from "@/actions/App/Http/Controllers/Auth/AuthenticatedSessionController";
+import { create as loginPage } from "@/actions/App/Http/Controllers/Auth/AuthenticateSessionController";
+import { Button } from "@/components/ui/button";
 
 export default function AppHeader() {
     const { user } = usePage<PageProps>().props;
@@ -13,9 +14,16 @@ export default function AppHeader() {
                         <AppHeaderLink href="/dashboard">
                             Dashboard
                         </AppHeaderLink>
-                        <div className="text-xl font-semibold">
-                            {user?.name}
-                        </div>
+                        {user ? (
+                            <div>dropdown</div>
+                        ) : (
+                            <Button asChild variant="outline">
+                                <Link href={loginPage().url}>Login</Link>
+                            </Button>
+                            // <Link href={loginPage().url}>
+                            //     <Button variant="outline">Login</Button>
+                            // </Link>
+                        )}
                     </div>
                 </nav>
             </div>
