@@ -35,6 +35,6 @@ class AuthenticateSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect(route("login.create"));
+        return redirect('/login');
     }
 }
