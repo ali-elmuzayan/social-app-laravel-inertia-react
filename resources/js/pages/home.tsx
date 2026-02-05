@@ -1,6 +1,6 @@
-import Layout from "@/Layouts/AppLayout";
+import Layout from "@/layouts/app-layout";
 
-export default function Welcome() {
+export default function Home() {
     return (
         <Layout>
             <div>Welcome at home page</div>

@@ -1,4 +1,4 @@
-import Layout from "@/Layouts/AppLayout";
+import Layout from "@/layouts/app-layout";
 
 export default function About() {
     return (

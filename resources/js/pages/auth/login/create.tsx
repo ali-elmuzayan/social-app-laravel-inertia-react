@@ -1,4 +1,4 @@
-import ErrorMessage from "@/components/ErrorMessage";
+import ErrorMessage from "@/components/error-message";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import AuthLayout from "@/Layouts/AuthLayout";
+import AuthLayout from "@/layouts/auth-layout";
 import { Form, Link } from "@inertiajs/react";
 
 export default function Login() {
