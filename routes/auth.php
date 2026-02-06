@@ -15,7 +15,7 @@ Route::middleware('guest')->group(function () {
 
     
     // Login & Logout Routes
-    Route::get('/login', [AuthenticateSessionController::class, 'create'])->name('login.create'); 
+    Route::get('/login', [AuthenticateSessionController::class, 'create'])->name('login'); 
     Route::post('/login', [AuthenticateSessionController::class, 'store'])->name('login.store');
 });
 Route::middleware('auth')->group(function () {

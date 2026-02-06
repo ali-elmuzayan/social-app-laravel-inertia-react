@@ -1,30 +1,18 @@
+import PostForm from "@/components/posts/post-form";
+import PostList from "@/components/posts/post-list";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import AppLayout from "@/layouts/app-layout";
-import { Form } from "@inertiajs/react";
+import { Post } from "@/types";
 
-export default function Index() {
+export default function Index({ posts }: { posts: Post[] }) {
     return (
         <AppLayout title="Dashboard">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-8 border-b pb-2">Dashboard</h1>
             <PostForm />
+            <div className="flex justify-between items-center mb-4">
+                <h1 className="text-2xl font-semibold text-gray-900">Posts</h1>
+                <Button variant="outline">filter</Button>
+            </div>
+            <PostList posts={posts} />
         </AppLayout>
     );
-}
-
-function PostForm() {
-    return (
-        <Form method="post" className="space-y-4">
-            <div className="flex  space-x-2">
-                <Label htmlFor="title" className="text-sm font-semibold text-gray-700">Title: </Label>
-                <Input type="text" name="title" />
-            </div>
-            <div className="flex space-x-2">
-                <Label htmlFor="body" className="text-sm font-semibold text-gray-700">Body: </Label>
-                <Input type="text" name="body" />   
-            </div>
-            <Button type="submit" >Post</Button>
-        </Form>
-    )
 }

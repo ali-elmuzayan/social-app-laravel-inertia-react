@@ -9,12 +9,9 @@ export default function NavLinks() {
     const { user } = usePage<PageProps>().props;
     return (
         <div className="flex space-x-6 items-center">
-            <Button >
-                <Link >Add Post</Link>
-            </Button>
-            <AppHeaderLink href="/dashboard">
-                Dashboard
-            </AppHeaderLink>
+            <AppHeaderLink href="/dashboard">Home</AppHeaderLink>
+            <AppHeaderLink href="/dashboard">About</AppHeaderLink>
+            <AppHeaderLink href="/dashboard">Contact</AppHeaderLink>
             {user ? (
                 <UserDropdown />
             ) : (

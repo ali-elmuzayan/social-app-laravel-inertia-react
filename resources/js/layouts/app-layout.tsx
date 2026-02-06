@@ -14,11 +14,9 @@ export default function AppLayout({ children, title }: AppLayoutProps) {
             <Head>
                 <title>{title}</title>
             </Head>
-            <AppHeader/>
+            <AppHeader />
             <main className="max-w-4xl mx-auto px-4 py-8">
-                <div className="bg-white rounded-lg shadaw-sm p-6">
-                    {children}
-                </div>
+                <div className="rounded-lg shadaw-sm p-6">{children}</div>
             </main>
             <Toaster />
         </div>

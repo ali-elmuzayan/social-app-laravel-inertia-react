@@ -66,7 +66,8 @@ telescope.head = (args?: { view?: string | number } | [view: string | number ] |
 })
 
 /**
-* @see routes/web.php:18
+* @see \App\Http\Controllers\Frontend\DashboardController::dashboard
+* @see app/Http/Controllers/Frontend/DashboardController.php:11
 * @route '/dashboard'
 */
 export const dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -80,7 +81,8 @@ dashboard.definition = {
 } satisfies RouteDefinition<["get","head"]>
 
 /**
-* @see routes/web.php:18
+* @see \App\Http\Controllers\Frontend\DashboardController::dashboard
+* @see app/Http/Controllers/Frontend/DashboardController.php:11
 * @route '/dashboard'
 */
 dashboard.url = (options?: RouteQueryOptions) => {
@@ -88,7 +90,8 @@ dashboard.url = (options?: RouteQueryOptions) => {
 }
 
 /**
-* @see routes/web.php:18
+* @see \App\Http\Controllers\Frontend\DashboardController::dashboard
+* @see app/Http/Controllers/Frontend/DashboardController.php:11
 * @route '/dashboard'
 */
 dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -97,7 +100,8 @@ dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 
 /**
-* @see routes/web.php:18
+* @see \App\Http\Controllers\Frontend\DashboardController::dashboard
+* @see app/Http/Controllers/Frontend/DashboardController.php:11
 * @route '/dashboard'
 */
 dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -146,6 +150,50 @@ register.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 */
 register.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: register.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AuthenticateSessionController::login
+* @see app/Http/Controllers/Auth/AuthenticateSessionController.php:15
+* @route '/login'
+*/
+export const login = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: login.url(options),
+    method: 'get',
+})
+
+login.definition = {
+    methods: ["get","head"],
+    url: '/login',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Auth\AuthenticateSessionController::login
+* @see app/Http/Controllers/Auth/AuthenticateSessionController.php:15
+* @route '/login'
+*/
+login.url = (options?: RouteQueryOptions) => {
+    return login.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Auth\AuthenticateSessionController::login
+* @see app/Http/Controllers/Auth/AuthenticateSessionController.php:15
+* @route '/login'
+*/
+login.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: login.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Auth\AuthenticateSessionController::login
+* @see app/Http/Controllers/Auth/AuthenticateSessionController.php:15
+* @route '/login'
+*/
+login.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: login.url(options),
     method: 'head',
 })
 
